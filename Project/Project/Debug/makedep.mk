@@ -4,6 +4,12 @@
 
 src\ASF\common\services\clock\sam3x\sysclk.c
 
+src\DelayFunctions.c
+
+src\Motorshield.c
+
+src\PWMFunctions.c
+
 src\SensorFunctions.c
 
 src\ASF\common\services\serial\usart_serial.c
