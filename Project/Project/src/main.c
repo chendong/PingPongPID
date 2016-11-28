@@ -27,8 +27,8 @@ int main (void)
 	delay_init();
 
 
+	
 	//test_terminal();
-	//test_sensor();
+	test_sensor();
 	//test_fan();
 }
-

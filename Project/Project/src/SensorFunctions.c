@@ -26,9 +26,36 @@ void adc_setup(void)
 
 
 /* Read sensor value */
+/*
+* <= 50cm = 1560	min value
+* 50-45cm = 1510
+* 45-40cm = 1460
+* 40-35cm = 1460	max value
+*/
 void sensor_read(void)
 {
+	uint16_t distance = 0;
+	
 	adc_start(ADC);
-	int sensor_value = adc_get_channel_value(ADC, ADC_CHANNEL_10);
-	printf("%d\n", sensor_value);
+	uint16_t sensor_value = adc_get_channel_value(ADC, ADC_CHANNEL_10);
+	
+	if(sensor_value > 1560)
+	{
+		distance = 50;
+	}
+	else if(sensor_value < 1560 && sensor_value >= 1510)
+	{
+		distance = 45;
+	}
+	else if(sensor_value < 1510 && sensor_value >= 1460)
+	{
+		distance = 40;
+	}
+	else if(sensor_value < 1460)
+	{
+		distance = 35;
+	}	
+	
+	printf("Sensor value: %d, Distance: %d\n", sensor_value, distance);
 }
+
