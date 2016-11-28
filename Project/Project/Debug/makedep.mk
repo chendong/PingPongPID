@@ -4,6 +4,8 @@
 
 src\ASF\common\services\clock\sam3x\sysclk.c
 
+src\SensorFunctions.c
+
 src\ASF\common\services\serial\usart_serial.c
 
 src\ASF\common\utils\interrupt\interrupt_sam_nvic.c

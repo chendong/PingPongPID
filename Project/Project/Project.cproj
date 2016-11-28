@@ -551,6 +551,12 @@
     <Compile Include="src\ASF\common\services\clock\sam3x\sysclk.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\SensorFunctions.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\SensorFunctions.h">
+      <SubType>compile</SubType>
+    </Compile>
     <None Include="src\ASF\common\services\serial\sam_uart\uart_serial.h">
       <SubType>compile</SubType>
     </None>
