@@ -147,6 +147,7 @@ src/ConsoleFunctions.d src/ConsoleFunctions.o: ../src/ConsoleFunctions.c \
  ../src/ASF/sam/drivers/uart/uart.h ../src/ASF/sam/drivers/usart/usart.h \
  ../src/config/conf_uart_serial.h ../src/ASF/sam/drivers/tc/tc.h \
  ../src/ASF/sam/drivers/pio/pio_handler.h ../src/config/conf_board.h \
+ d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/inttypes.h \
  ../src/ConsoleFunctions.h
 
 ../src/asf.h:
@@ -460,5 +461,7 @@ d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../l
 ../src/ASF/sam/drivers/pio/pio_handler.h:
 
 ../src/config/conf_board.h:
+
+d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/inttypes.h:
 
 ../src/ConsoleFunctions.h:

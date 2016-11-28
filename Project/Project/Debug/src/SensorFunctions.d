@@ -146,7 +146,7 @@ src/SensorFunctions.d src/SensorFunctions.o: ../src/SensorFunctions.c \
  ../src/ASF/common/services/serial/sam_uart/uart_serial.h \
  ../src/ASF/sam/drivers/uart/uart.h ../src/ASF/sam/drivers/usart/usart.h \
  ../src/config/conf_uart_serial.h ../src/ASF/sam/drivers/tc/tc.h \
- ../src/ASF/sam/drivers/pio/pio_handler.h \
+ ../src/ASF/sam/drivers/pio/pio_handler.h ../src/config/conf_board.h \
  d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/inttypes.h \
  ../src/SensorFunctions.h
 
@@ -459,6 +459,8 @@ d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../l
 ../src/ASF/sam/drivers/tc/tc.h:
 
 ../src/ASF/sam/drivers/pio/pio_handler.h:
+
+../src/config/conf_board.h:
 
 d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/inttypes.h:
 

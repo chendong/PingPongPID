@@ -102,6 +102,7 @@ C_SRCS +=  \
 ../src/Motorshield.c \
 ../src/PWMFunctions.c \
 ../src/SensorFunctions.c \
+../src/TestFunctions.c \
 ../src/ASF/common/services/serial/usart_serial.c \
 ../src/ASF/common/utils/interrupt/interrupt_sam_nvic.c \
 ../src/ASF/common/utils/stdio/read.c \
@@ -144,6 +145,7 @@ src/DelayFunctions.o \
 src/Motorshield.o \
 src/PWMFunctions.o \
 src/SensorFunctions.o \
+src/TestFunctions.o \
 src/ASF/common/services/serial/usart_serial.o \
 src/ASF/common/utils/interrupt/interrupt_sam_nvic.o \
 src/ASF/common/utils/stdio/read.o \
@@ -179,6 +181,7 @@ src/DelayFunctions.o \
 src/Motorshield.o \
 src/PWMFunctions.o \
 src/SensorFunctions.o \
+src/TestFunctions.o \
 src/ASF/common/services/serial/usart_serial.o \
 src/ASF/common/utils/interrupt/interrupt_sam_nvic.o \
 src/ASF/common/utils/stdio/read.o \
@@ -214,6 +217,7 @@ src/DelayFunctions.d \
 src/Motorshield.d \
 src/PWMFunctions.d \
 src/SensorFunctions.d \
+src/TestFunctions.d \
 src/ASF/common/services/serial/usart_serial.d \
 src/ASF/common/utils/interrupt/interrupt_sam_nvic.d \
 src/ASF/common/utils/stdio/read.d \
@@ -249,6 +253,7 @@ src/DelayFunctions.d \
 src/Motorshield.d \
 src/PWMFunctions.d \
 src/SensorFunctions.d \
+src/TestFunctions.d \
 src/ASF/common/services/serial/usart_serial.d \
 src/ASF/common/utils/interrupt/interrupt_sam_nvic.d \
 src/ASF/common/utils/stdio/read.d \
@@ -289,6 +294,8 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 LIB_DEP+= 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

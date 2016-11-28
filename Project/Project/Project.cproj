@@ -575,6 +575,12 @@
     <Compile Include="src\SensorFunctions.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\TestFunctions.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\TestFunctions.h">
+      <SubType>compile</SubType>
+    </Compile>
     <None Include="src\ASF\common\services\serial\sam_uart\uart_serial.h">
       <SubType>compile</SubType>
     </None>

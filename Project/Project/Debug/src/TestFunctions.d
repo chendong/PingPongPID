@@ -1,5 +1,6 @@
-src/main.d src/main.o: ../src/main.c ../src/asf.h \
- ../src/ASF/sam/drivers/adc/adc.h ../src/ASF/sam/utils/compiler.h \
+src/TestFunctions.d src/TestFunctions.o: ../src/TestFunctions.c \
+ ../src/asf.h ../src/ASF/sam/drivers/adc/adc.h \
+ ../src/ASF/sam/utils/compiler.h \
  d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/include/stddef.h \
  ../src/ASF/common/utils/parts.h \
  ../src/ASF/sam/utils/preprocessor/preprocessor.h \
@@ -148,7 +149,7 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  ../src/ASF/sam/drivers/pio/pio_handler.h ../src/config/conf_board.h \
  d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/inttypes.h \
  ../src/ConsoleFunctions.h ../src/SensorFunctions.h ../src/PWMFunctions.h \
- ../src/Motorshield.h ../src/DelayFunctions.h ../src/TestFunctions.h
+ ../src/DelayFunctions.h ../src/TestFunctions.h
 
 ../src/asf.h:
 
@@ -469,8 +470,6 @@ d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../l
 ../src/SensorFunctions.h:
 
 ../src/PWMFunctions.h:
-
-../src/Motorshield.h:
 
 ../src/DelayFunctions.h:
 

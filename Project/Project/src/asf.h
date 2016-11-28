@@ -122,4 +122,8 @@
 // From module: pio_handler support enabled
 #include <pio_handler.h>
 
+
+#include <conf_board.h>
+#include <inttypes.h>
+
 #endif // ASF_H

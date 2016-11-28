@@ -6,7 +6,6 @@
  */ 
 
 #include <asf.h>
-#include <conf_board.h>
 #include "ConsoleFunctions.h"
 
 
