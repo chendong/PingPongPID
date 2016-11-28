@@ -74,9 +74,6 @@
  * See heap_1.c, heap_2.c and heap_3.c for alternative implementations, and the 
  * memory management pages of http://www.FreeRTOS.org for more information.
  */
- /**
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
- */
 #include <stdlib.h>
 
 /* Defining MPU_WRAPPERS_INCLUDED_FROM_API_FILE prevents task.h from redefining
@@ -84,8 +81,8 @@ all the API functions to use the MPU wrappers.  That should only be done when
 task.h is included from an application file. */
 #define MPU_WRAPPERS_INCLUDED_FROM_API_FILE
 
-#include "../../include/FreeRTOS.h"
-#include "../../include/task.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
 #undef MPU_WRAPPERS_INCLUDED_FROM_API_FILE
 

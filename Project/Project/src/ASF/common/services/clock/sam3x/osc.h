@@ -3,7 +3,7 @@
  *
  * \brief Chip-specific oscillator management functions.
  *
- * Copyright (c) 2011 - 2014 Atmel Corporation. All rights reserved.
+ * Copyright (c) 2011 - 2013 Atmel Corporation. All rights reserved.
  *
  * \asf_license_start
  *
@@ -40,9 +40,6 @@
  * \asf_license_stop
  *
  */
- /**
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
- */
 
 #ifndef CHIP_OSC_H_INCLUDED
 #define CHIP_OSC_H_INCLUDED
@@ -57,35 +54,6 @@ extern "C" {
 #endif
 /**INDENT-ON**/
 /// @endcond
-
-/*
- * Below BOARD_XXX macros are related to the specific board, and
- * should be defined by the board code, otherwise default value are used.
- */
-#if !defined(BOARD_FREQ_SLCK_XTAL)
-#  warning The board slow clock xtal frequency has not been defined.
-#  define BOARD_FREQ_SLCK_XTAL      (32768UL)
-#endif
-
-#if !defined(BOARD_FREQ_SLCK_BYPASS)
-#  warning The board slow clock bypass frequency has not been defined.
-#  define BOARD_FREQ_SLCK_BYPASS    (32768UL)
-#endif
-
-#if !defined(BOARD_FREQ_MAINCK_XTAL)
-#  warning The board main clock xtal frequency has not been defined.
-#  define BOARD_FREQ_MAINCK_XTAL    (12000000UL)
-#endif
-
-#if !defined(BOARD_FREQ_MAINCK_BYPASS)
-#  warning The board main clock bypass frequency has not been defined.
-#  define BOARD_FREQ_MAINCK_BYPASS  (12000000UL)
-#endif
-
-#if !defined(BOARD_OSC_STARTUP_US)
-#  warning The board main clock xtal startup time has not been defined.
-#  define BOARD_OSC_STARTUP_US      (15625UL)
-#endif
 
 /**
  * \weakgroup osc_group
@@ -209,11 +177,15 @@ static inline uint32_t osc_get_rate(uint32_t ul_id)
 	case OSC_SLCK_32K_RC:
 		return OSC_SLCK_32K_RC_HZ;
 
+#ifdef BOARD_FREQ_SLCK_XTAL
 	case OSC_SLCK_32K_XTAL:
 		return BOARD_FREQ_SLCK_XTAL;
+#endif
 
+#ifdef BOARD_FREQ_SLCK_BYPASS
 	case OSC_SLCK_32K_BYPASS:
 		return BOARD_FREQ_SLCK_BYPASS;
+#endif
 
 	case OSC_MAINCK_4M_RC:
 		return OSC_MAINCK_4M_RC_HZ;
@@ -224,11 +196,15 @@ static inline uint32_t osc_get_rate(uint32_t ul_id)
 	case OSC_MAINCK_12M_RC:
 		return OSC_MAINCK_12M_RC_HZ;
 
+#ifdef BOARD_FREQ_MAINCK_XTAL
 	case OSC_MAINCK_XTAL:
 		return BOARD_FREQ_MAINCK_XTAL;
+#endif
 
+#ifdef BOARD_FREQ_MAINCK_BYPASS
 	case OSC_MAINCK_BYPASS:
 		return BOARD_FREQ_MAINCK_BYPASS;
+#endif
 	}
 
 	return 0;

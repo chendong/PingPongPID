@@ -67,9 +67,6 @@
 */
 
 /* Standard includes. */
- /**
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
- */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -80,10 +77,10 @@ task.h is included from an application file. */
 #define MPU_WRAPPERS_INCLUDED_FROM_API_FILE
 
 /* FreeRTOS includes. */
-#include "include/FreeRTOS.h"
-#include "include/task.h"
-#include "include/timers.h"
-#include "include/StackMacros.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "timers.h"
+#include "StackMacros.h"
 
 #undef MPU_WRAPPERS_INCLUDED_FROM_API_FILE
 

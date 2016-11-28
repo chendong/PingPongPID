@@ -36,18 +36,15 @@
  */
 
 /* Standard includes. */
- /**
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
- */
 #include <string.h>
 #include <stdint.h>
 
 /* FreeRTOS includes. */
-#include "include/FreeRTOS.h"
-#include "include/task.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
 /* Utils includes. */
-#include "include/FreeRTOS_CLI.h"
+#include "FreeRTOS_CLI.h"
 
 typedef struct xCOMMAND_INPUT_LIST
 {

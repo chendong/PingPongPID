@@ -4,7 +4,7 @@
  * \brief Provides the low-level initialization functions that called 
  * on chip startup.
  *
- * Copyright (c) 2011 - 2014 Atmel Corporation. All rights reserved.
+ * Copyright (c) 2011 - 2012 Atmel Corporation. All rights reserved.
  *
  * \asf_license_start
  *
@@ -41,9 +41,6 @@
  * \asf_license_stop
  *
  */
- /**
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
- */
 
 #include "system_sam3x.h"
 #include "sam3xa.h"
@@ -76,8 +73,6 @@ uint32_t SystemCoreClock = CHIP_FREQ_MAINCK_RC_4MHZ;
  * \brief Setup the microcontroller system.
  * Initialize the System and update the SystemFrequency variable.
  */
-__no_inline
-RAMFUNC
 void SystemInit(void)
 {
 	/* Set FWS according to SYS_BOARD_MCKR configuration */
@@ -194,8 +189,6 @@ void SystemCoreClockUpdate(void)
 /** 
  * Initialize flash.
  */
-__no_inline
-RAMFUNC
 void system_init_flash(uint32_t ul_clk)
 {
 	/* Set FWS for embedded Flash access according to operating frequency */
@@ -211,12 +204,9 @@ void system_init_flash(uint32_t ul_clk)
 	} else if (ul_clk < CHIP_FREQ_FWS_3) {
 		EFC0->EEFC_FMR = EEFC_FMR_FWS(3);
 		EFC1->EEFC_FMR = EEFC_FMR_FWS(3);
-	} else if (ul_clk < CHIP_FREQ_FWS_4) {
-		EFC0->EEFC_FMR = EEFC_FMR_FWS(4);
-		EFC1->EEFC_FMR = EEFC_FMR_FWS(4);	
 	} else {
-		EFC0->EEFC_FMR = EEFC_FMR_FWS(5);
-		EFC1->EEFC_FMR = EEFC_FMR_FWS(5);
+		EFC0->EEFC_FMR = EEFC_FMR_FWS(4);
+		EFC1->EEFC_FMR = EEFC_FMR_FWS(4);
 	}
 }
 

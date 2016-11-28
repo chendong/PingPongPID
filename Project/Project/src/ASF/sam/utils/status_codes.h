@@ -6,7 +6,7 @@
  * This file defines various status codes returned by functions,
  * indicating success or failure as well as what kind of failure.
  *
- * Copyright (c) 2011-2014 Atmel Corporation. All rights reserved.
+ * Copyright (c) 2011-2013 Atmel Corporation. All rights reserved.
  *
  * \asf_license_start
  *
@@ -42,9 +42,6 @@
  *
  * \asf_license_stop
  *
- */
- /**
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 
 #ifndef STATUS_CODES_H_INCLUDED
@@ -91,7 +88,7 @@ enum status_code {
 	ERR_NO_TIMER            =  -12, //!< No timer available
 	ERR_TIMER_ALREADY_RUNNING   =  -13, //!< Timer already running
 	ERR_TIMER_NOT_RUNNING   =  -14, //!< Timer not running
-	ERR_ABORTED             =  -15, //!< Operation aborted by user
+
 	/**
 	 * \brief Operation in progress
 	 *

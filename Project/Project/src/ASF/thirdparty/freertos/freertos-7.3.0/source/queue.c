@@ -65,9 +65,6 @@
     provide a safety engineered and independently SIL3 certified version under 
     the SafeRTOS brand: http://www.SafeRTOS.com.
 */
- /**
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
- */
 
 #include <stdlib.h>
 #include <string.h>
@@ -77,11 +74,11 @@ all the API functions to use the MPU wrappers.  That should only be done when
 task.h is included from an application file. */
 #define MPU_WRAPPERS_INCLUDED_FROM_API_FILE
 
-#include "include/FreeRTOS.h"
-#include "include/task.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
 #if ( configUSE_CO_ROUTINES == 1 )
-	#include "include/croutine.h"
+	#include "croutine.h"
 #endif
 
 #undef MPU_WRAPPERS_INCLUDED_FROM_API_FILE

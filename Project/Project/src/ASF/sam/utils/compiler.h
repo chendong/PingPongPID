@@ -3,7 +3,7 @@
  *
  * \brief Commonly used includes, types and macros.
  *
- * Copyright (c) 2010-2014 Atmel Corporation. All rights reserved.
+ * Copyright (c) 2010-2013 Atmel Corporation. All rights reserved.
  *
  * \asf_license_start
  *
@@ -39,9 +39,6 @@
  *
  * \asf_license_stop
  *
- */
- /**
- * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 
 #ifndef UTILS_COMPILER_H
@@ -164,21 +161,6 @@
 #	define __always_inline   _Pragma("inline=forced")
 #endif
 
-/**
- * \def __no_inline
- * \brief The function should not be inlined.
- *
- * This annotation instructs the compiler to ignore its inlining
- * heuristics and not inline the function.
- */
-#if defined(__CC_ARM)
-#   define __no_inline   __attribute__((noinline))
-#elif (defined __GNUC__)
-#	define __no_inline   __attribute__((__noinline__))
-#elif (defined __ICCARM__)
-#	define __no_inline   _Pragma("inline=never")
-#endif
-
 /*! \brief This macro is used to test fatal errors.
  *
  * The macro tests if the expression is false. If it is, a fatal error is
@@ -204,7 +186,7 @@
 #endif
 
 /* Define WEAK attribute */
-#if defined   ( __CC_ARM   ) /* Keil ç¤¦ision 4 */
+#if defined   ( __CC_ARM   ) /* Keil µVision 4 */
 #   define WEAK __attribute__ ((weak))
 #elif defined ( __ICCARM__ ) /* IAR Ewarm 5.41+ */
 #   define WEAK __weak
@@ -222,7 +204,7 @@
 #endif
 
 /* Define RAMFUNC attribute */
-#if defined   ( __CC_ARM   ) /* Keil ç¤¦ision 4 */
+#if defined   ( __CC_ARM   ) /* Keil µVision 4 */
 #   define RAMFUNC __attribute__ ((section(".ramfunc")))
 #elif defined ( __ICCARM__ ) /* IAR Ewarm 5.41+ */
 #   define RAMFUNC __ramfunc
@@ -231,7 +213,7 @@
 #endif
 
 /* Define OPTIMIZE_HIGH attribute */
-#if defined   ( __CC_ARM   ) /* Keil ç¤¦ision 4 */
+#if defined   ( __CC_ARM   ) /* Keil µVision 4 */
 #   define OPTIMIZE_HIGH _Pragma("O3") 
 #elif defined ( __ICCARM__ ) /* IAR Ewarm 5.41+ */
 #   define OPTIMIZE_HIGH _Pragma("optimize=high")
@@ -1098,11 +1080,11 @@ typedef U8                  Byte;       //!< 8-bit unsigned integer.
  */
 static inline void convert_64_bit_to_byte_array(uint64_t value, uint8_t *data)
 {
-    uint8_t val_index = 0;
+    uint8_t index = 0;
 
-    while (val_index < 8)
+    while (index < 8)
     {
-        data[val_index++] = value & 0xFF;
+        data[index++] = value & 0xFF;
         value = value >> 8;
     }
 }
@@ -1147,22 +1129,6 @@ static inline uint16_t convert_byte_array_to_16_bit(uint8_t *data)
     return (data[0] | ((uint16_t)data[1] << 8));
 }
 
-/* Converts a 8 Byte array into a 32-Bit value */
-static inline uint32_t convert_byte_array_to_32_bit(uint8_t *data)
-{
-	union
-	{
-		uint32_t u32;
-		uint8_t u8[8];
-	}long_addr;
-	uint8_t index;
-	for (index = 0; index < 4; index++)
-	{
-		long_addr.u8[index] = *data++;
-	}
-	return long_addr.u32;
-}
-
 /**
  * @brief Converts a 8 Byte array into a 64-Bit value
  *
@@ -1179,11 +1145,11 @@ static inline uint64_t convert_byte_array_to_64_bit(uint8_t *data)
         uint8_t u8[8];
     } long_addr;
 
-    uint8_t val_index;
+    uint8_t index;
 
-    for (val_index = 0; val_index < 8; val_index++)
+    for (index = 0; index < 8; index++)
     {
-        long_addr.u8[val_index] = *data++;
+        long_addr.u8[index] = *data++;
     }
 
     return long_addr.u64;
