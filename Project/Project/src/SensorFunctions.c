@@ -42,7 +42,7 @@ uint16_t sensor_read(void)
 	{	
 		adc_start(ADC);
 		uint16_t sensor_value = adc_get_channel_value(ADC, ADC_CHANNEL_10);
-		printf("sensor: %d\n", sensor_value);
+		//printf("sensor: %d\n", sensor_value);
 	
 		if(sensor_value > 1850)
 		{
