@@ -557,10 +557,31 @@
     <Compile Include="src\DelayFunctions.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\GlobalVariables.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\io_uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\io_uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\MatlabPlot.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\MatlabPlot.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\Motorshield.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Motorshield.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\PIDControl.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\PIDControl.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\PWMFunctions.c">

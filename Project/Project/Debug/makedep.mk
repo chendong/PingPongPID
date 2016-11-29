@@ -6,7 +6,13 @@ src\ASF\common\services\clock\sam3x\sysclk.c
 
 src\DelayFunctions.c
 
+src\io_uart.c
+
+src\MatlabPlot.c
+
 src\Motorshield.c
+
+src\PIDControl.c
 
 src\PWMFunctions.c
 

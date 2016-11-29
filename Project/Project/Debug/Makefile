@@ -99,7 +99,10 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../src/ASF/common/services/clock/sam3x/sysclk.c \
 ../src/DelayFunctions.c \
+../src/io_uart.c \
+../src/MatlabPlot.c \
 ../src/Motorshield.c \
+../src/PIDControl.c \
 ../src/PWMFunctions.c \
 ../src/SensorFunctions.c \
 ../src/TestFunctions.c \
@@ -142,7 +145,10 @@ ASM_SRCS +=
 OBJS +=  \
 src/ASF/common/services/clock/sam3x/sysclk.o \
 src/DelayFunctions.o \
+src/io_uart.o \
+src/MatlabPlot.o \
 src/Motorshield.o \
+src/PIDControl.o \
 src/PWMFunctions.o \
 src/SensorFunctions.o \
 src/TestFunctions.o \
@@ -178,7 +184,10 @@ src/main.o
 OBJS_AS_ARGS +=  \
 src/ASF/common/services/clock/sam3x/sysclk.o \
 src/DelayFunctions.o \
+src/io_uart.o \
+src/MatlabPlot.o \
 src/Motorshield.o \
+src/PIDControl.o \
 src/PWMFunctions.o \
 src/SensorFunctions.o \
 src/TestFunctions.o \
@@ -214,7 +223,10 @@ src/main.o
 C_DEPS +=  \
 src/ASF/common/services/clock/sam3x/sysclk.d \
 src/DelayFunctions.d \
+src/io_uart.d \
+src/MatlabPlot.d \
 src/Motorshield.d \
+src/PIDControl.d \
 src/PWMFunctions.d \
 src/SensorFunctions.d \
 src/TestFunctions.d \
@@ -250,7 +262,10 @@ src/main.d
 C_DEPS_AS_ARGS +=  \
 src/ASF/common/services/clock/sam3x/sysclk.d \
 src/DelayFunctions.d \
+src/io_uart.d \
+src/MatlabPlot.d \
 src/Motorshield.d \
+src/PIDControl.d \
 src/PWMFunctions.d \
 src/SensorFunctions.d \
 src/TestFunctions.d \
@@ -294,6 +309,12 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 LIB_DEP+= 
 
 # AVR32/GNU C Compiler
+
+
+
+
+
+
 
 
 

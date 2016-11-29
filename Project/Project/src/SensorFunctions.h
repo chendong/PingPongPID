@@ -11,7 +11,7 @@
 
 
 void adc_setup(void);
-void sensor_read(void);
+uint16_t sensor_read(void);
 
 
 #endif /* SENSORFUNCTIONS_H_ */

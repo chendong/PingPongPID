@@ -1,4 +1,4 @@
-src/main.d src/main.o: ../src/main.c ../src/asf.h \
+src/PIDControl.d src/PIDControl.o: ../src/PIDControl.c ../src/asf.h \
  ../src/ASF/sam/drivers/adc/adc.h ../src/ASF/sam/utils/compiler.h \
  d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/include/stddef.h \
  ../src/ASF/common/utils/parts.h \
@@ -147,9 +147,8 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  ../src/config/conf_uart_serial.h ../src/ASF/sam/drivers/tc/tc.h \
  ../src/ASF/sam/drivers/pio/pio_handler.h ../src/config/conf_board.h \
  d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/inttypes.h \
- ../src/ConsoleFunctions.h ../src/SensorFunctions.h ../src/PWMFunctions.h \
- ../src/Motorshield.h ../src/DelayFunctions.h ../src/TestFunctions.h \
- ../src/PIDControl.h
+ ../src/PIDControl.h ../src/Motorshield.h ../src/PWMFunctions.h \
+ ../src/SensorFunctions.h ../src/GlobalVariables.h
 
 ../src/asf.h:
 
@@ -465,16 +464,12 @@ d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../l
 
 d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/inttypes.h:
 
-../src/ConsoleFunctions.h:
-
-../src/SensorFunctions.h:
-
-../src/PWMFunctions.h:
+../src/PIDControl.h:
 
 ../src/Motorshield.h:
 
-../src/DelayFunctions.h:
+../src/PWMFunctions.h:
 
-../src/TestFunctions.h:
+../src/SensorFunctions.h:
 
-../src/PIDControl.h:
+../src/GlobalVariables.h:
