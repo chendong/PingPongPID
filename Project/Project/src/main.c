@@ -13,9 +13,7 @@
 #include "DelayFunctions.h"
 #include "TestFunctions.h"
 #include "PIDControl.h"
-
-
-
+#include "MatlabPlot.h"
 
 int main (void)
 {
@@ -39,14 +37,16 @@ int main (void)
 	
 	//pid_control();
 	
-
-
-	/* Create the first task for monitoring the procesor activity */
-	if (xTaskCreate(pid_control, (const signed char * const) "PID Control", 1024, NULL, 1, NULL) != pdPASS)
+	/* Create the first task for monitoring the processor activity */
+	if (xTaskCreate(pid_control, (const signed char * const) "PID Control", 1024, NULL, 2, NULL) != pdPASS)
 	{
 		printf("Failed to create PID Control task\r\n");
 	}
-		
+	
+	if (xTaskCreate(plot_values, (const signed char * const) "Plot Values", 1024, NULL, 1, NULL) != pdPASS)
+	{
+		printf("Failed to create PID Control task\r\n");
+	}
 	
 	/* Start the FreeRTOS scheduler running all tasks indefinitely*/
 	vTaskStartScheduler();
