@@ -12,6 +12,7 @@
 #include "PWMFunctions.h"
 #include "DelayFunctions.h"
 #include "TestFunctions.h"
+#include "io_uart.h"
 
 
 void test_terminal(void)
@@ -49,4 +50,18 @@ void test_fan(void)
 		}
 	}
 
+}
+
+void test_uart(void)
+{
+	while(1)
+	{
+		if(uart_receiver_ready())
+		{
+				uint8_t done = 112;
+				char matlabStr[10];
+				sprintf(matlabStr, "%d", done);
+				printf("%s\n",matlabStr);
+		}
+	}
 }

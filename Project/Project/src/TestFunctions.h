@@ -13,6 +13,6 @@
 void test_terminal(void);
 void test_sensor(void);
 void test_fan(void);
-
+void test_uart(void);
 
 #endif /* TESTFUNCTIONS_H_ */

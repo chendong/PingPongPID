@@ -149,7 +149,7 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/include/inttypes.h \
  ../src/ConsoleFunctions.h ../src/SensorFunctions.h ../src/PWMFunctions.h \
  ../src/Motorshield.h ../src/DelayFunctions.h ../src/TestFunctions.h \
- ../src/PIDControl.h ../src/MatlabPlot.h
+ ../src/PIDControl.h ../src/MatlabPlot.h ../src/io_uart.h
 
 ../src/asf.h:
 
@@ -480,3 +480,5 @@ d:\programs\atmel\ toolchain\arm\ gcc\native\4.7.3.99\arm-gnu-toolchain\bin\../l
 ../src/PIDControl.h:
 
 ../src/MatlabPlot.h:
+
+../src/io_uart.h:

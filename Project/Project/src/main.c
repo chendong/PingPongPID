@@ -14,6 +14,7 @@
 #include "TestFunctions.h"
 #include "PIDControl.h"
 #include "MatlabPlot.h"
+#include "io_uart.h"
 
 int main (void)
 {
@@ -24,11 +25,13 @@ int main (void)
 	pwm_setup();			// Initialize PWM
 	motorshield_setup();	// Initialize motor shield
 	delay_init();			// Initialize delay
-
+	//uart_config(115200);
 
 	//test_terminal();
 	//test_sensor();
 	//test_fan();
+	//test_uart();
+
 	
 	//while(1)
 	//{
@@ -47,7 +50,7 @@ int main (void)
 	{
 		printf("Failed to create PID Control task\r\n");
 	}
-	
-	/* Start the FreeRTOS scheduler running all tasks indefinitely*/
+	//
+	///* Start the FreeRTOS scheduler running all tasks indefinitely*/
 	vTaskStartScheduler();
 }

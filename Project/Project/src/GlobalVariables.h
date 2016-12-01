@@ -20,6 +20,8 @@ extern int16_t PID;
 extern int16_t error;
 extern uint16_t current_value;
 
+extern uint8_t valuesSet;
+
 
 
 #endif /* GLOBALVARIABLES_H_ */

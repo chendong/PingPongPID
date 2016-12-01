@@ -44,23 +44,23 @@ uint16_t sensor_read(void)
 		uint16_t sensor_value = adc_get_channel_value(ADC, ADC_CHANNEL_10);
 		//printf("sensor: %d\n", sensor_value);
 	
-		if(sensor_value > 1850)
+		if(sensor_value > 2145)
 		{
 			distance = 30;
 		}
-		else if(sensor_value < 1850 && sensor_value >= 1760)
+		else if(sensor_value < 2145 && sensor_value >= 2090)
 		{
 			distance = 35;
 		}
-		else if(sensor_value < 1760 && sensor_value >= 1660)
+		else if(sensor_value < 2090 && sensor_value >= 2015)
 		{
 			distance = 40;
 		}
-		else if(sensor_value < 1660 && sensor_value >= 1510)
+		else if(sensor_value < 2015 && sensor_value >= 1890)
 		{
 			distance = 45;
 		}	
-		else if(sensor_value < 1510)
+		else if(sensor_value < 1890)	// && sensor_value >= 1800
 		{
 			distance = 50;
 		}

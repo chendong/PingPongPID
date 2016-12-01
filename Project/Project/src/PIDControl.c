@@ -14,10 +14,10 @@
 
 
 uint16_t setpoint = 40; 
-double dT = 0.1;
-double Kp = 0.348; 
-double Ti = 1.4; 
-double Td = 0.35;
+double dT = 1;
+double Kp = 1; 
+double Ti = 2; 
+double Td = 3;
 int16_t PID;
 int16_t error;
 uint16_t current_value;
@@ -28,6 +28,8 @@ int16_t prev_error = 0;
 uint16_t integral = 0;
 uint16_t derivate = 0;
 
+uint8_t valuesSet;
+
 
 /* PID control */
 void pid_control(void *p)
@@ -36,29 +38,33 @@ void pid_control(void *p)
 	portTickType xTimeIncrement = 100;		//ms
 	xLastWakeTime = xTaskGetTickCount();
 	
-	while(1)
-	{
-		vTaskDelayUntil( &xLastWakeTime, xTimeIncrement); /* Wait for the next cycle */
-		
-		current_value = sensor_read();
-		error = setpoint - current_value;
-		
-		sum = (sum + prev_error);
-		integral = (sum * (dT/Ti));
-		derivate = ((Td/dT) * (error - prev_error));
-		PID = (Kp* (error + integral + derivate))*100;
-		prev_error = error;
-		//printf("C: %d, E: %d, P: %d\n", current_value, error, PID);
-		
-		if(PID > 800)
+	//if(valuesSet == 1){
+		while(1)
 		{
-			PID = 800;
-		}
-		if(PID < 0)
-		{
-			PID = 0;
-		}
-		pwm_update(PID);
-		//printf("PID: %d\n", PID);	
-	}
+				current_value = sensor_read();
+				error = setpoint - current_value;
+		
+				sum = (sum + prev_error);
+				integral = (sum * (dT/Ti));
+				derivate = ((Td/dT) * (error - prev_error));
+				PID = (Kp* (error + integral + derivate))*100;
+				prev_error = error;
+				//printf("C: %d, E: %d, P: %d\n", current_value, error, PID);
+		
+				if(PID > 800)
+				{
+					PID = 800;
+				}
+				if(PID < 0)
+				{
+					PID = 0;
+				}
+				pwm_update(PID);
+				//printf("PID: %d\n", PID);	
+			vTaskDelayUntil( &xLastWakeTime, xTimeIncrement); /* Wait for the next cycle */
+				
+			}
+	//}
+
+	
 }
