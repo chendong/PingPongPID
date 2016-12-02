@@ -5,10 +5,8 @@
  *  Author: Nadia, Elvin
  */ 
 
-
 #include <asf.h>
 #include "Motorshield.h"
-
 
 /* Initialize motor shield, using pins for channel A */
 void motorshield_setup(void)

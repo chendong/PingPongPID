@@ -5,12 +5,9 @@
  *  Author: Nadia
  */ 
 
-
 #ifndef PIDCONTROL_H_
 #define PIDCONTROL_H_
 
-
 void pid_control(void *p);
-
 
 #endif /* PIDCONTROL_H_ */

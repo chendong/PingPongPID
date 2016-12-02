@@ -5,12 +5,9 @@
  *  Author: Nadia
  */ 
 
-
 #ifndef MATLABPLOT_H_
 #define MATLABPLOT_H_
 
-
 void plot_values(void *p);
-
 
 #endif /* MATLABPLOT_H_ */

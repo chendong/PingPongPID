@@ -3,49 +3,21 @@
  *
  * This file contains functions for UART communication.
  *
- * Created by: Mathias Beckius, 2014-03-18
+ * Author: Nadia, Elvin
  */ 
 
 #include "io_uart.h"
 
-/* UART Control Register (pointer) */
-reg_address_t *const p_UART_CR = (reg_address_t *) 0x400E0800U;
-/* UART Mode Register (pointer) */
-reg_address_t *const p_UART_MR = (reg_address_t *) 0x400E0804U;
 /* UART Status Register (pointer) */
 reg_address_t *const p_UART_SR = (reg_address_t *) 0x400E0814U;
-/* UART Receiver Holding Register (pointer) */
-reg_address_t *const p_UART_RHR = (reg_address_t *) 0x400E0818U;
-/* UART Transmit Holding Register (pointer) */
-reg_address_t *const p_UART_THR = (reg_address_t *) 0x400E081CU;
-/* UART Baud Rate Generator Register (pointer) */
-reg_address_t *const p_UART_BRGR = (reg_address_t *) 0x400E0820U;
 
-/*
- * UART Configuration
- * Configures UART communication with a certain baud rate.
- */
-void uart_config(uint32_t baud)
+void setupUART(void)
 {
-	/* reset and disable receiver & transmitter */
-	UART_CR = UART_CR_RSTRX | UART_CR_RSTTX	| UART_CR_RXDIS | UART_CR_TXDIS;
-	/* configure baud rate */
-	UART_BRGR = (MCK >> 4) / baud;
-	/* configure mode */
-	UART_MR = UART_MR_PAR_NO | UART_MR_CHMODE_NORMAL;
-	/* enable receiver and transmitter */
-	UART_CR = UART_CR_RXEN | UART_CR_TXEN;
-	/* configure RX0 pin as pull-up */
-	ioport_set_pin_mode(PIO_PA8_IDX, IOPORT_MODE_PULLUP);	
-}
-
-/*
- * Transmitter Ready?
- * Return 1 if "Transmitter Ready" flag is set, otherwise 0.
- */
-int uart_transmitter_ready(void)
-{
-	return (UART_SR & UART_SR_TXRDY);
+	pio_configure(PINS_UART_PIO, PINS_UART_TYPE, PINS_UART_MASK, PIO_DEFAULT);
+	pmc_enable_periph_clk(ID_UART);
+	const sam_uart_opt_t uart0_settings = {sysclk_get_cpu_hz(), CONF_UART_BAUDRATE, UART_MR_PAR_NO};
+	ioport_set_pin_mode(PIO_PA8_IDX, IOPORT_MODE_PULLUP);
+	uart_init(UART, &uart0_settings);
 }
 
 /*
@@ -57,32 +29,40 @@ int uart_receiver_ready(void)
 	return (UART_SR & UART_SR_RXRDY);
 }
 
-/*
- * Send character
- * Write character to Transmit Holding Register.
- */
-void uart_send_char(uint8_t chr)
+uint32_t wait_rxready(void)
 {
-	UART_THR = chr;
-}
-
-/*
- * Receive character
- * Read character from Receiver Holding Register.
- */
-char uart_receive_char(void)
-{
-	char chr = UART_RHR;
-	return chr;
+	while(!((UART_SR & UART_SR_RXRDY)>0));
+	
+	return 1;
 }
 
 /* Converts string to double */
 double read_double(void)
 {
-	double result = 0.0;
+	double result;
 	char str[10] = {0};
 	scanf("%s", str);
 	result = atof(str);
+	
+	return result;
+}
+
+/* Converts string to double */
+uint8_t read_int(void)
+{
+	uint8_t result;
+	char str[10] = {0};
+	scanf("%s", str);
+	result = atof(str);
+	
+	return result;
+}
+
+/* Get and return a binary value */
+uint8_t read_uart(void)
+{
+	uint8_t result;
+	uart_read(CONF_UART, &result);
 	
 	return result;
 }

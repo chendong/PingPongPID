@@ -14,10 +14,8 @@
 #include "TestFunctions.h"
 #include "io_uart.h"
 
-
 void test_terminal(void)
 {
-	
 	while(1)
 	{
 		printf("Hej\n");
@@ -25,21 +23,18 @@ void test_terminal(void)
 	
 }
 
-
 void test_sensor(void)
 {
 	while(1)
 	{
 		sensor_read();
-	}
-	
+	}	
 }
 
 
 //Fan power: 350 - 1000
 void test_fan(void)
 {
-	
 	while(1)
 	{
 		for(int i = 350; i < 1001; i+=150)
@@ -49,7 +44,6 @@ void test_fan(void)
 			delay(5000000);	// 5 seconds
 		}
 	}
-
 }
 
 void test_uart(void)

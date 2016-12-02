@@ -1,8 +1,6 @@
 /**
  * main.c
- *
- *  Author: Nadia, Elvin
- *
+ * Author: Nadia, Elvin
  */
 
 #include <asf.h>
@@ -25,32 +23,24 @@ int main (void)
 	pwm_setup();			// Initialize PWM
 	motorshield_setup();	// Initialize motor shield
 	delay_init();			// Initialize delay
-	//uart_config(115200);
+	setupUART();
+	
+	ioport_set_pin_dir(PIO_PB27_IDX, IOPORT_DIR_OUTPUT);
+	ioport_set_pin_level(PIO_PB27_IDX, 0);
 
 	//test_terminal();
 	//test_sensor();
 	//test_fan();
 	//test_uart();
-
 	
-	//while(1)
-	//{
-		//sensor_read();
-	//}
-	
-	//pid_control();
-	
-	/* Create the first task for monitoring the processor activity */
 	if (xTaskCreate(pid_control, (const signed char * const) "PID Control", 1024, NULL, 2, NULL) != pdPASS)
 	{
 		printf("Failed to create PID Control task\r\n");
 	}
-	
-	if (xTaskCreate(plot_values, (const signed char * const) "Plot Values", 1024, NULL, 1, NULL) != pdPASS)
+	if (xTaskCreate(plot_values, (const signed char * const) "Plot Values", 1024, NULL, 1 , NULL) != pdPASS)
 	{
 		printf("Failed to create PID Control task\r\n");
 	}
-	//
-	///* Start the FreeRTOS scheduler running all tasks indefinitely*/
+
 	vTaskStartScheduler();
 }

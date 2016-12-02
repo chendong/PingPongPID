@@ -1,6 +1,5 @@
 /*
  * PWMFunctions.c
- *
  * Created: 11/28/2016 14:44:40
  *  Author: Nadia, Elvin
  */ 
@@ -10,16 +9,13 @@
 #include <stdio.h>
 #include "PWMFunctions.h"
 
-
 static pwm_channel_t pwm_channel_instance;			// Define the PWM channel instance in order to configure channel
-
 
 /* Initialize PWM for pin DAC1 */
 void pwm_setup(void)
 {
 	pmc_enable_periph_clk(ID_PWM);					// Enable the module clock for PWM peripheral
-	pwm_channel_disable(PWM, PWM_CHANNEL);			// Disable channel 0
-	
+	pwm_channel_disable(PWM, PWM_CHANNEL);			// Disable channel 0	
 	pwm_clock_t clock_setting = {					// Setup clock for PWM module
 		.ul_clka = 1000 * 1000,						// Clock A is configured, frequencey = 1KHz, period = 1000
 		.ul_clkb = 0,								// Clock B is not used
@@ -38,7 +34,6 @@ void pwm_setup(void)
 	pio_set_peripheral(PIOB, PIO_PERIPH_B, PIO_PB16B_PWML0);		// Setup PWM for pin DAC1
 	pwm_channel_enable(PWM, PWM_CHANNEL);							// Enable channel 6
 }
-
 
 /* Update duty cycle */
 void pwm_update(int duty_cycle)

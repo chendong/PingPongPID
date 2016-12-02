@@ -5,13 +5,10 @@
  *  Author: Nadia, ELvin
  */ 
 
-
 #ifndef SENSORFUNCTIONS_H_
 #define SENSORFUNCTIONS_H_
 
-
 void adc_setup(void);
 uint16_t sensor_read(void);
-
 
 #endif /* SENSORFUNCTIONS_H_ */

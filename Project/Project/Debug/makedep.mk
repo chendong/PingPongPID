@@ -4,7 +4,7 @@
 
 src\ASF\common\services\clock\sam3x\sysclk.c
 
-src\DelayFunctions.c
+src\ASF\sam\drivers\uart\DelayFunctions.c
 
 src\io_uart.c
 
