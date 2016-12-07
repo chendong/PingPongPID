@@ -2,7 +2,7 @@
  * PIDControl.h
  *
  * Created: 11/28/2016 17:42:13
- *  Author: Nadia
+ *  Author: Nadia, Elvin
  */ 
 
 #ifndef PIDCONTROL_H_

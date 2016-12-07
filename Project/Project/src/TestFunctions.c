@@ -1,9 +1,9 @@
-/*
+ /*
 * TestFunctions.c
-* Test if terminal window, fan and sensor works separately
+* Test if terminal window, fan, sensor and uart works separately
 *
 * Created: 11/28/2016 15:45:46
-*  Author: Nadia
+*  Author: Nadia, Elvin
 */
 
 #include <asf.h>
@@ -14,6 +14,7 @@
 #include "TestFunctions.h"
 #include "io_uart.h"
 
+/* Self-explanatory functions */
 void test_terminal(void)
 {
 	while(1)
@@ -32,7 +33,7 @@ void test_sensor(void)
 }
 
 
-//Fan power: 350 - 1000
+//Fan power: 0-100
 void test_fan(void)
 {
 	while(1)

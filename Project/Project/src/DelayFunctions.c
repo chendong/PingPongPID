@@ -2,12 +2,13 @@
  * DelayFunctions.c
  *
  * Created: 11/28/2016 15:37:51
- *  Author: Nadia
+ *  Author: Nadia, Elvin
  */ 
 
 
 #include "asf.h"
 #include "DelayFunctions.h"
+
 
 int delay_init(void)
 {
@@ -18,7 +19,7 @@ int delay_init(void)
 	return 0;
 }
 
-
+/* Function used to delay x µs (1000000 µs = 1 second) */
 void delay(uint32_t us)
 {
 	tc_start(TC0, 0);

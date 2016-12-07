@@ -551,13 +551,13 @@
     <Compile Include="src\ASF\common\services\clock\sam3x\sysclk.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\ASF\common\services\serial\GlobalVariables.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\ASF\sam\drivers\uart\DelayFunctions.c">
+    <Compile Include="src\DelayFunctions.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\DelayFunctions.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\GlobalVariables.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\io_uart.c">

@@ -16,13 +16,10 @@ typedef uint32_t reg_address_t;
 /* UART Status Register */
 #define UART_SR (*p_UART_SR)
 
-/* Receiver Ready? */
+void uart_setup(void);
 int uart_receiver_ready(void);
-
 double read_double(void);
 uint8_t read_int(void);
-uint32_t wait_rxready(void);
-void setupUART(void);
 uint8_t read_uart(void);
 
 #endif

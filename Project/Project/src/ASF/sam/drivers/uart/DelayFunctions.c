@@ -2,9 +2,8 @@
  * DelayFunctions.c
  *
  * Created: 11/28/2016 15:37:51
- *  Author: Nadia
+ *  Author: Nadia, Elvin
  */ 
-
 
 #include "asf.h"
 #include "DelayFunctions.h"

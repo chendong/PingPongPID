@@ -2,13 +2,12 @@
  * SensorFunctions.c
  *
  * Created: 11/28/2016 14:26:32
- *  Author: Nadia,Elvin
+ *  Author: Nadia, Elvin
  */ 
 
 #include <asf.h>
 #include <inttypes.h>
 #include "SensorFunctions.h"
-
 
 /* Initialize ADC for pin A8 */
 void adc_setup(void)
@@ -25,15 +24,7 @@ void adc_setup(void)
 }
 
 
-/* Read sensor value */
-
-/*
-* <= 50cm =	1850	min value
-* 50-45cm = 1760
-* 45-40cm = 1660
-* 40-35cm = 1510
-* 35-30cm = 1380	max value
-*/
+/* Read and linearize sensor value. Returns the distance in cm (20-50 cm) */
 uint16_t sensor_read(void)
 {
 	uint16_t distance = 0;	
@@ -42,32 +33,38 @@ uint16_t sensor_read(void)
 	{	
 		adc_start(ADC);
 		uint16_t sensor_value = adc_get_channel_value(ADC, ADC_CHANNEL_10);
-		//printf("sensor: %d\n", sensor_value);
-	
-		if(sensor_value > 1890)
+		
+		/* Flerstegsregulator */
+		if(sensor_value <= 1630)
+		{
+			distance = 20;
+		}
+		else if(sensor_value > 1630 && sensor_value <= 1720)
+		{
+			distance = 25;
+		}
+		else if(sensor_value >1720 && sensor_value <= 1925)
 		{
 			distance = 30;
 		}
-		else if(sensor_value < 1890 && sensor_value >= 1850)
+		else if(sensor_value > 1925 && sensor_value <= 2145)
 		{
 			distance = 35;
-		}
-		else if(sensor_value < 1850 && sensor_value >= 1780)
+		}		
+		else if(sensor_value > 2145 && sensor_value <= 2455)
 		{
 			distance = 40;
 		}
-		else if(sensor_value < 1780 && sensor_value >= 1690)
+		else if(sensor_value > 2455 && sensor_value <= 2810)
 		{
 			distance = 45;
-		}	
-		else if(sensor_value < 1690)	// && sensor_value >= 1800
+		}
+		else if(sensor_value > 2810)
 		{
 			distance = 50;
 		}
 		//printf("Sensor value: %d, Distance: %d\n", sensor_value, distance);
-		return distance;
-		
+		return distance;		
 	}
-	
 }
 

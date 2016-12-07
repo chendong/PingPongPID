@@ -1,3 +1,4 @@
+
 N=240;
 PID = zeros(1, N);
 ERROR = zeros(1, N);
@@ -13,10 +14,11 @@ t = zeros(1, N);
       ERRORread = fscanf(s);
       DISTANCEread = fscanf(s);
       
-      % Convert from string to int
+      % Convert from string to double
       PID(i) = str2double(PIDread);
       ERROR(i) = str2double(ERRORread);
       DISTANCE(i) = str2double(DISTANCEread);
+      
       
       plot(t, PID, 'g--', t, ERROR,'r--', t, DISTANCE,'b--')
       refline(0, bv);

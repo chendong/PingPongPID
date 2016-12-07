@@ -11,7 +11,7 @@
 /* UART Status Register (pointer) */
 reg_address_t *const p_UART_SR = (reg_address_t *) 0x400E0814U;
 
-void setupUART(void)
+void uart_setup(void)
 {
 	pio_configure(PINS_UART_PIO, PINS_UART_TYPE, PINS_UART_MASK, PIO_DEFAULT);
 	pmc_enable_periph_clk(ID_UART);
@@ -22,21 +22,15 @@ void setupUART(void)
 
 /*
  * Receiver Ready?
- * Return 1 if "Receiver Ready" flag is set, otherwise 0.
+ * Return 1 if "Receiver Ready" flag is set, otherwise 0
  */
+/* If receiver is ready, return 1. Returns 1 if "fwrite(s, uint8(1))" is executed in MATLAB */
 int uart_receiver_ready(void)
 {
 	return (UART_SR & UART_SR_RXRDY);
 }
 
-uint32_t wait_rxready(void)
-{
-	while(!((UART_SR & UART_SR_RXRDY)>0));
-	
-	return 1;
-}
-
-/* Converts string to double */
+/* Read a string and converts to double */
 double read_double(void)
 {
 	double result;
@@ -47,7 +41,7 @@ double read_double(void)
 	return result;
 }
 
-/* Converts string to double */
+/* Read a string and converts to int */
 uint8_t read_int(void)
 {
 	uint8_t result;
@@ -58,7 +52,7 @@ uint8_t read_int(void)
 	return result;
 }
 
-/* Get and return a binary value */
+/* Get and return a binary value. Used with "fwrite(s, uint8(1))" from MATLAB */
 uint8_t read_uart(void)
 {
 	uint8_t result;
