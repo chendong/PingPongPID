@@ -1,7 +1,8 @@
 /*
 * PIDControl.c
+*
 * Created: 11/28/2016 17:37:26
-* Author: Nadia, Elvin
+* Author: Nadia Manoh and Elvin Lapovski
 */
 
 #include <asf.h>
@@ -11,7 +12,7 @@
 #include "SensorFunctions.h"
 #include "GlobalVariables.h"
 
-uint16_t setpoint;
+uint8_t setpoint;
 double Kp;
 double Ti;
 double Td;

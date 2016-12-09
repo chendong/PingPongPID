@@ -3,7 +3,7 @@
 * Test if terminal window, fan, sensor and uart works separately
 *
 * Created: 11/28/2016 15:45:46
-*  Author: Nadia, Elvin
+* Author: Nadia Manoh and Elvin Lapovski
 */
 
 #include <asf.h>

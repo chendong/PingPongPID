@@ -1,6 +1,7 @@
 /**
  * main.c
- * Author: Nadia, Elvin
+ *
+ * Author: Nadia Manoh and Elvin Lapovski
  */
 
 #include <asf.h>
@@ -27,14 +28,13 @@ int main (void)
 	/* Initialization of 'L' lamp used as a flag */
 	ioport_set_pin_dir(PIO_PB27_IDX, IOPORT_DIR_OUTPUT);
 	ioport_set_pin_level(PIO_PB27_IDX, 0);
-
+	
 	/* Test functions */
 	//test_terminal();
 	//test_sensor();
 	//test_fan();
 	//test_uart();
 	//test_pin();
-	
 	
 	/* Task with highest priority */
 	if (xTaskCreate(pid_control, (const signed char * const) "PID Control", 1024, NULL, 2, NULL) != pdPASS)
@@ -45,7 +45,7 @@ int main (void)
 	/* Task with lower priority */
 	if (xTaskCreate(plot_values, (const signed char * const) "Plot Values", 1024, NULL, 1 , NULL) != pdPASS)
 	{
-		printf("Failed to create PID Control task\r\n");
+		printf("Failed to create Plot Values task\r\n");
 	}
 	
 	/* Start the FreeRTOS scheduler running all tasks indefinitely */

@@ -2,7 +2,7 @@
  * Motorshield.h
  *
  * Created: 11/28/2016 14:57:34
- *  Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #ifndef MOTORSHIELD_H_

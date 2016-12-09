@@ -1,7 +1,8 @@
 /*
  * io_uart.h
+ *
  * This file contains functions for UART communication.
- * Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #ifndef IO_UART_H_

@@ -2,7 +2,7 @@
  * SensorFunctions.h
  *
  * Created: 11/28/2016 14:26:56
- *  Author: Nadia, ELvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #ifndef SENSORFUNCTIONS_H_

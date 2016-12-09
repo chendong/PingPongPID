@@ -2,7 +2,7 @@
  * Motorshield.c
  *
  * Created: 11/28/2016 14:57:17
- *  Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #include <asf.h>

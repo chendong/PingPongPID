@@ -2,7 +2,7 @@
 * MatlabPlot.c
 *
 * Created: 11/29/2016 13:04:47
-*  Author: Nadia, Elvin
+* Author: Nadia Manoh and Elvin Lapovski
 */
 
 #include <asf.h>
@@ -11,7 +11,7 @@
 #include "GlobalVariables.h"
 #include "io_uart.h"
 
-uint16_t setpoint;
+uint8_t setpoint;
 double Kp;
 double Ti;
 double Td;
@@ -27,9 +27,9 @@ void plot_values(void *p)
 	portTickType xTimeIncrement = 100;	//ms
 	xLastWakeTime = xTaskGetTickCount();
 	uart_setup();
-
+	
 	while(1)
-	{
+	{	
 		if(uart_receiver_ready())
 		{
 			if(read_uart() == 1)

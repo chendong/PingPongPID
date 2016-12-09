@@ -2,7 +2,7 @@
  * PWMFunctions.h
  *
  * Created: 11/28/2016 14:45:36
- *  Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #ifndef PWMFUNCTIONS_H_

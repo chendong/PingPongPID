@@ -2,7 +2,7 @@
  * MatlabPlot.h
  *
  * Created: 11/29/2016 13:05:12
- *  Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #ifndef MATLABPLOT_H_

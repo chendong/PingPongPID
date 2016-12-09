@@ -2,8 +2,7 @@
  * io_uart.c
  *
  * This file contains functions for UART communication.
- *
- * Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #include "io_uart.h"

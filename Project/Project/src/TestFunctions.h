@@ -1,7 +1,8 @@
 /*
  * TestFunctions.h
+ *
  * Created: 11/28/2016 15:49:07
- *  Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #ifndef TESTFUNCTIONS_H_

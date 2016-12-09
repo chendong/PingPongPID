@@ -11,17 +11,17 @@ td = 0.125 * 0.9;
 dt = 0.1;
 
 % Karl Johan Åström and Tore Hägglund
-bv = 40;
+bv = 25;
 kp = 0.35 * 3.2;
 ti = 0.77 * 0.9;
 td = 0.19 * 0.9;
 dt = 0.1;
 
-% Ziegler-Nichols after adjustment
+% Ajustment working for all setpoints (25, 30, 35, 40, 45, 50)
 bv = 40;
-kp = 0.25 * 3.2;
-ti = 0.72 * 0.9;
-td = 0.21 * 0.9;
+kp = 0.28;
+ti = 0.855;
+td = 0.23;
 dt = 0.1;
 
 % Receiver ready

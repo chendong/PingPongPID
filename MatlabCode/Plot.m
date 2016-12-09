@@ -13,7 +13,7 @@ t = zeros(1, N);
       ERRORread = fscanf(s);
       DISTANCEread = fscanf(s);
       
-      % Convert from string to int
+      % Convert from string to double
       PID(i) = str2double(PIDread);
       ERROR(i) = str2double(ERRORread);
       DISTANCE(i) = str2double(DISTANCEread);

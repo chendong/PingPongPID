@@ -2,7 +2,7 @@
  * DelayFunctions.h
  *
  * Created: 11/28/2016 15:38:00
- *  Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #ifndef DELAYFUNCTIONS_H_

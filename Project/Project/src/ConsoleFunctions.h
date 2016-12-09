@@ -2,7 +2,7 @@
  * ConsoleFunctions.h
  *
  * Created: 11/28/2016 13:49:37
- *  Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #ifndef CONSOLEFUNCTIONS_H_

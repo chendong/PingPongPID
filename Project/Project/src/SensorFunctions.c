@@ -2,7 +2,7 @@
  * SensorFunctions.c
  *
  * Created: 11/28/2016 14:26:32
- *  Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #include <asf.h>
@@ -39,27 +39,27 @@ uint16_t sensor_read(void)
 		{
 			distance = 20;
 		}
-		else if(sensor_value > 1630 && sensor_value <= 1720)
+		else if(sensor_value > 1630 && sensor_value <= 1760)
 		{
 			distance = 25;
 		}
-		else if(sensor_value >1720 && sensor_value <= 1925)
+		else if(sensor_value > 1760 && sensor_value <= 1890)
 		{
 			distance = 30;
 		}
-		else if(sensor_value > 1925 && sensor_value <= 2145)
+		else if(sensor_value > 1890 && sensor_value <= 2180)
 		{
 			distance = 35;
 		}		
-		else if(sensor_value > 2145 && sensor_value <= 2455)
+		else if(sensor_value > 2180 && sensor_value <= 2475)
 		{
 			distance = 40;
 		}
-		else if(sensor_value > 2455 && sensor_value <= 2810)
+		else if(sensor_value > 2475 && sensor_value <= 2800)
 		{
 			distance = 45;
 		}
-		else if(sensor_value > 2810)
+		else if(sensor_value > 2800)
 		{
 			distance = 50;
 		}

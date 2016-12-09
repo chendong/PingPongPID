@@ -2,7 +2,7 @@
  * DelayFunctions.c
  *
  * Created: 11/28/2016 15:37:51
- *  Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 

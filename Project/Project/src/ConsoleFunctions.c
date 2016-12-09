@@ -2,7 +2,7 @@
  * ConsoleFunctions.c
  *
  * Created: 11/28/2016 13:49:23
- *  Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #include <asf.h>

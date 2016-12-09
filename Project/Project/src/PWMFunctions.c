@@ -1,7 +1,8 @@
 /*
  * PWMFunctions.c
+ *
  * Created: 11/28/2016 14:44:40
- *  Author: Nadia, Elvin
+ * Author: Nadia Manoh and Elvin Lapovski
  */ 
 
 #include <asf.h>
@@ -27,8 +28,6 @@ void pwm_setup(void)
 	pwm_channel_instance.ul_period = 100;
 	pwm_channel_instance.ul_duty = 0;
 	pwm_channel_instance.channel = PWM_CHANNEL;						// Configure channel 0
-	//pwm_channel_instance.alignment = PWM_ALIGN_LEFT;				// Period is left-aligned
-	//pwm_channel_instance.polarity = PWM_LOW;						// Output waveform starts at a low level
 	
 	pwm_channel_init(PWM, &pwm_channel_instance);					// Initialize channel instance
 	pio_set_peripheral(PIOB, PIO_PERIPH_B, PIO_PB16B_PWML0);		// Setup PWM for pin DAC1
